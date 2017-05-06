@@ -581,8 +581,8 @@ PlayerSettings:
   cloudServicesEnabled: {}
   facebookSdkVersion: 7.9.1
   apiCompatibilityLevel: 2
-  cloudProjectId: 
-  projectName: 
-  organizationId: 
+  cloudProjectId: 5f972a99-08d8-4b5e-9189-0d24262a8003
+  projectName: AdventureJam2017
+  organizationId: vogles
   cloudEnabled: 0
   enableNewInputSystem: 0
