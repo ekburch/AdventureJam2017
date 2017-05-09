@@ -34,20 +34,21 @@ public class ScenesManagerEditor : Editor
         m_mainMenuSceneLabel = new GUIContent("Main Menu Scene", "The scene loaded when the game first start and at game over.");
     }
 
-    protected void ShowScenes()
-    {
-        var mainMenuObj = GetSceneObject(m_sceneManager.MainMenuScene);
-    }
+//    protected void ShowScenes()
+//    {
+//        var mainMenuObj = GetSceneObject(m_sceneManager.MainMenuScene);
+//    }
 
-    protected SceneAsset GetSceneObject(string sceneObjectName)
-    {
-        if (String.IsNullOrEmpty(sceneObjectName))
-            return null;
-
-        foreach( var editorScene in EditorBuildSettings.scenes)
-        {
-            if (editorScene.path.IndexOf(sceneObjectName) != -1)
-                return AssetDatabase.LoadAssetAtPath(editorScene.path, typeof(SceneAsset)) as SceneAsset;
-        }
-    }
+//    protected SceneAsset GetSceneObject(string sceneObjectName)
+//    {
+//        if (String.IsNullOrEmpty(sceneObjectName))
+//            return null;
+//
+//        foreach( var editorScene in EditorBuildSettings.scenes)
+//        {
+//            if (editorScene.path.IndexOf(sceneObjectName) != -1)
+//                return AssetDatabase.LoadAssetAtPath(editorScene.path, typeof(SceneAsset)) as SceneAsset;
+//
+//        }
+//    }
 }
