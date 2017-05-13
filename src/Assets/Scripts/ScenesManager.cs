@@ -6,6 +6,28 @@ using Fungus;
 
 public class ScenesManager : MonoBehaviour
 {
+    #region Singleton
+    private static ScenesManager _instance = null;
+    public static ScenesManager Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = FindObjectOfType<ScenesManager>();
+
+                if (_instance == null)
+                {
+                    var newScenesManager = new GameObject("Scene Manager");
+                    _instance = newScenesManager.AddComponent<ScenesManager>();
+                }
+            }
+
+            return _instance;
+        }
+    }
+    #endregion
+
     [SerializeField] string m_mainMenuScene;
     [SerializeField] string m_cityScene;
     [SerializeField] string m_apartmentScene;
@@ -26,5 +48,11 @@ public class ScenesManager : MonoBehaviour
     {
         SceneManager.UnloadSceneAsync(MainMenuScene);
         SceneManager.LoadScene(CityScene, LoadSceneMode.Additive);
+    }
+
+    public void GoToApartmentScene()
+    {
+        SceneManager.UnloadSceneAsync(ApartmentScene);
+        SceneManager.LoadScene(ApartmentScene, LoadSceneMode.Additive);
     }
 }
