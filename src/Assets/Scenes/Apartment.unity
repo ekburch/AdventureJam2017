@@ -1153,7 +1153,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 743608556}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
-<<<<<<< HEAD
 --- !u!1 &743632777
 GameObject:
   m_ObjectHideFlags: 0
@@ -1266,8 +1265,6 @@ SpriteRenderer:
   m_Size: {x: 1.09375, y: 1.09375}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-=======
->>>>>>> 4c7ba76c506c0128b591576f0678f6cddf5bc8b3
 --- !u!1 &870197707
 GameObject:
   m_ObjectHideFlags: 0
