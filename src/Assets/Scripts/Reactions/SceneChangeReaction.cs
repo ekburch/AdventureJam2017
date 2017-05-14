@@ -7,6 +7,7 @@ using UnityEngine;
 
 namespace AdventureJam.Reactions
 {
+    [CreateAssetMenu]
     public class SceneChangeReaction : Reaction
     {
         [SerializeField]
