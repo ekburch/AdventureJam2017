@@ -10,5 +10,7 @@ namespace AdventureJam.Reactions
     {
         public virtual void Initialize() { }
         public virtual void React(MonoBehaviour behaviour) { }
+
+        protected abstract void React();
     }
 }
