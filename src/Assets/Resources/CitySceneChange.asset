@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 215c41c43af3207458ab3c0b79070828, type: 3}
-  m_Name: ApartmentSceneChange
+  m_Name: CitySceneChange
   m_EditorClassIdentifier: 
-  _scene: Apartment
+  _scene: City
   _playerSaveData: {fileID: 0}

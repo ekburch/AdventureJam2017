@@ -12,7 +12,6 @@ public class SceneChangeReactionEditor : ReactionEditor
     GUIContent _sceneLabel;
 
     protected bool _initialized;
-    protected SceneChangeReaction _reaction;
 
     protected override string GetFoldoutLabel()
     {
@@ -28,7 +27,8 @@ public class SceneChangeReactionEditor : ReactionEditor
 
     protected override void DrawReaction()
     {
-        var reactionSceneObj = GetSceneObject(_reaction.SceneName);
+        var sceneChangeReaction = _reaction as SceneChangeReaction;
+        var reactionSceneObj = GetSceneObject(sceneChangeReaction.SceneName);
         var newScene = EditorGUILayout.ObjectField(_sceneLabel, reactionSceneObj, typeof(SceneAsset), false);
         if (newScene == null)
         {
@@ -38,7 +38,7 @@ public class SceneChangeReactionEditor : ReactionEditor
         }
         else
         {
-            if (newScene.name != _reaction.SceneName)
+            if (newScene.name != sceneChangeReaction.SceneName)
             {
                 var sceneObj = GetSceneObject(newScene.name);
                 if (sceneObj == null)

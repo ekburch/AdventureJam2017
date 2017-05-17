@@ -12,7 +12,7 @@ namespace AdventureJam.Reactions
         [SerializeField]
         private bool _showReaction;
         private SerializedProperty _reactionsProperty;
-        private Reaction _reaction;
+        protected Reaction _reaction;
 
         private const float ButtonWidth = 30f;
 
