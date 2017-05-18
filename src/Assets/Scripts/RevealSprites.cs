@@ -32,4 +32,12 @@ public class RevealSprites : MonoBehaviour
             }
         }
     }
+
+    void OnTriggerExit (Collider other)
+    {
+		if (other.gameObject.CompareTag("Player"))
+        {
+        	this.GetComponent<BoxCollider>().enabled = false;
+        }
+    }
 }
