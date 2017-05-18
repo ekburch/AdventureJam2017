@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Fungus;
 
 public class PlayerController : MonoBehaviour 
 {
@@ -14,13 +15,14 @@ public class PlayerController : MonoBehaviour
 
     public float speed = 5f;
 
+    public GameObject ground;
+
+    public Vector3 target;
+    public Vector3 tempPos;
 	public Vector3 mouseDragPos;
     public Vector3 mouseDownPos;
-    
-    public GameObject ground;
-    public Vector3 target;
-    
-    public Vector3 tempPos;
+
+	public Flowchart flowchart;
 
     public bool stopMoving = false;
     
@@ -35,46 +37,51 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {   
-    //TODO: Make the player controller its own function outside of Update()
     	switch (currState)
     	{   
     		case State.Move:
 	    		currState = State.Move;
 	    		stopMoving = false;
-		    	if (Input.GetMouseButton (0)) 
-		        {
-		            RaycastHit hit;
-		            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-		            
-		            if (ground.GetComponent<Collider>().Raycast (ray, out hit, Mathf.Infinity)) 
-		            {
-		                tempPos = transform.position;
-		                tempPos.y = hit.point.y;
-		                tempPos.x = hit.point.x;
-		                tempPos.z = hit.point.z;
-		                moveToPos = true;
-		            }
-		         }
-
-		        if(moveToPos)
-		        {
-		            Vector3 tempV3 = (tempPos - transform.position).normalized * speed;
-		            tempV3.y -= 2;
-		            GetComponent<Rigidbody>().velocity = tempV3;
-
-		            if (Vector3.Distance(transform.position, tempPos) < 1)
-		            {
-		                moveToPos = false;   
-						GetComponent<Rigidbody>().velocity = new Vector3(0,0,0);
-		            }
-		        }
+				MovePlayer();
 		   		break;
 
 		   	case State.Dialog:
 		   		currState = State.Dialog;
 		   		stopMoving = true;
-		   		GetComponent<Rigidbody>().velocity = new Vector3(0,0,0);
+		   		StopMoving();
 		   		break;
+        }
+	}
+
+	public void MovePlayer()
+	{
+		currState = State.Move;
+		if (Input.GetMouseButton (0)) 
+        {
+            RaycastHit hit;
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            
+            if (ground.GetComponent<Collider>().Raycast (ray, out hit, Mathf.Infinity)) 
+            {
+                tempPos = transform.position;
+                tempPos.y = hit.point.y;
+                tempPos.x = hit.point.x;
+                tempPos.z = hit.point.z;
+                moveToPos = true;
+            }
+         }
+
+        if(moveToPos)
+        {
+            Vector3 tempV3 = (tempPos - transform.position).normalized * speed;
+            tempV3.y -= 2;
+            GetComponent<Rigidbody>().velocity = tempV3;
+
+            if (Vector3.Distance(transform.position, tempPos) < 1)
+            {
+                moveToPos = false;   
+				GetComponent<Rigidbody>().velocity = new Vector3(0,0,0);
+            }
         }
 	}
 
@@ -84,5 +91,11 @@ public class PlayerController : MonoBehaviour
         {
             transform.position = Vector3.MoveTowards(transform.position, tarPos, speed * Time.deltaTime);
         }
+    }
+
+    public void StopMoving()
+    {
+    	currState = State.Dialog;
+    	GetComponent<Rigidbody>().velocity = new Vector3(0,0,0);
     }
 }
