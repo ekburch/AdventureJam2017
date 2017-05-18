@@ -20,7 +20,7 @@ public class RevealSprites : MonoBehaviour
     // Update is called once per frame
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag(Tags.Player))
         {
             //flowchart.SetBooleanVariable("spiritTriggered", true);
             spirit.enabled = true;
