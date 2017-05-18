@@ -9,7 +9,7 @@ namespace AdventureJam.Reactions
     public abstract class Reaction : ScriptableObject
     {
         public virtual void Initialize() { }
-        public virtual void React(MonoBehaviour behaviour) { }
+        public virtual void React(MonoBehaviour behaviour) { React(); }
 
         protected abstract void React();
     }

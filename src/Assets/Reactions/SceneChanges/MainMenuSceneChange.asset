@@ -12,4 +12,3 @@ MonoBehaviour:
   m_Name: MainMenuSceneChange
   m_EditorClassIdentifier: 
   _scene: MainMenu
-  _playerSaveData: {fileID: 0}

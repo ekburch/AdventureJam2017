@@ -12,15 +12,24 @@ namespace AdventureJam.Reactions
     {
         [SerializeField]
         private string _scene;
-        [SerializeField]
         private SaveData _playerSaveData;
+        private SceneController _sceneController;
 
         public string SceneName { get { return _scene; } }
         public SaveData PlayerSaveData { get { return _playerSaveData; } }
 
+        public override void Initialize()
+        {
+            _sceneController = FindObjectOfType<SceneController>();
+        }
+
         protected override void React()
         {
-            _playerSaveData.Set("PlayerStartPos", "asdf");
+            // Save the StartingPosition's name to the data asset
+            //_playerSaveData.Set("PlayerStartPos", "asdf");
+
+            // Start the scene loading process.
+            _sceneController.LoadScene(this);
         }
     }
 }
