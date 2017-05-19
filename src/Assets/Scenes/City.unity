@@ -108,18 +108,6 @@ NavMeshSettings:
     tileSize: 256
     accuratePlacement: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &280448248 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114008287108380292, guid: 09b56ab99de084e6a8e475c3dd608352,
-    type: 2}
-  m_PrefabInternal: {fileID: 1576880481}
-  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
---- !u!114 &280448396 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114760505290473706, guid: 09b56ab99de084e6a8e475c3dd608352,
-    type: 2}
-  m_PrefabInternal: {fileID: 1576880481}
-  m_Script: {fileID: 11500000, guid: 7a334fe2ffb574b3583ff3b18b4792d3, type: 3}
 --- !u!1 &366690214
 GameObject:
   m_ObjectHideFlags: 0
@@ -212,7 +200,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFlowchart: {fileID: 280448396}
+  selectedFlowchart: {fileID: 114760505290473706, guid: 09b56ab99de084e6a8e475c3dd608352,
+    type: 2}
 --- !u!4 &666121737
 Transform:
   m_ObjectHideFlags: 1
@@ -397,6 +386,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114760505290473706, guid: 09b56ab99de084e6a8e475c3dd608352,
+        type: 2}
+      propertyPath: selectedBlocks.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4959985083146884, guid: 09b56ab99de084e6a8e475c3dd608352, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -433,7 +427,7 @@ Prefab:
         type: 2}
       propertyPath: selectedBlocks.Array.data[0]
       value: 
-      objectReference: {fileID: 280448248}
+      objectReference: {fileID: 1576880482}
     - target: {fileID: 114680787260165424, guid: 09b56ab99de084e6a8e475c3dd608352,
         type: 2}
       propertyPath: nodeRect.x
@@ -444,9 +438,20 @@ Prefab:
       propertyPath: nodeRect.x
       value: 1146.8367
       objectReference: {fileID: 0}
+    - target: {fileID: 114660113276514440, guid: 09b56ab99de084e6a8e475c3dd608352,
+        type: 2}
+      propertyPath: nodeRect.y
+      value: 286.12692
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 09b56ab99de084e6a8e475c3dd608352, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1576880482 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114077047559609400, guid: 09b56ab99de084e6a8e475c3dd608352,
+    type: 2}
+  m_PrefabInternal: {fileID: 1576880481}
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
 --- !u!1001 &1992867311
 Prefab:
   m_ObjectHideFlags: 0
