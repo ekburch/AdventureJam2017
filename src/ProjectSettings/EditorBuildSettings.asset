@@ -12,8 +12,8 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 5b80c50c6ad3686469ad3c0cd48cb69b
   - enabled: 1
-    path: Assets/Scenes/Apartment.unity
-    guid: 7dcfda9448a936e44bf6380537e38254
-  - enabled: 1
     path: Assets/Scenes/City.unity
     guid: 851b7c3ed397b9b468333b8f3c7dbd27
+  - enabled: 1
+    path: Assets/Scenes/Apartment.unity
+    guid: 7dcfda9448a936e44bf6380537e38254

@@ -9,6 +9,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 26b01ba2877d50349a13fcd87f133f9f, type: 3}
-  m_Name: OldBeer
+  m_Name: OldBeer1
   m_EditorClassIdentifier: 
-  _blockName: 
+  _blockName: Old Beer1
