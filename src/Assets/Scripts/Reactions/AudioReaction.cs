@@ -11,8 +11,8 @@ namespace AdventureJam.Reactions
 
         protected override void React()
         {
-            _audioSource.clip = _audioClip;
-            _audioSource.PlayDelayed(_delay);
+            if (_audioClip != null)
+                AudioSource.PlayClipAtPoint(_audioClip, Vector3.zero, 1);
         }
     }
 }

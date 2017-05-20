@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 65882755354529334}
   - component: {fileID: 114732434088416082}
   - component: {fileID: 114078530739035440}
-  - component: {fileID: 114944500958595366}
+  - component: {fileID: 114904859604474356}
   m_Layer: 0
   m_Name: LaptopInteractable
   m_TagString: Untagged
@@ -68,7 +68,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _reactions:
-  - {fileID: 11400000, guid: 91fbd048a84378043a893aff200b7a80, type: 2}
   - {fileID: 11400000, guid: 42d7c0d4b79f5e44bb8701222ca999e3, type: 2}
 --- !u!114 &114732434088416082
 MonoBehaviour:
@@ -82,7 +81,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _reactionCollection: {fileID: 114078530739035440}
---- !u!114 &114944500958595366
+--- !u!114 &114904859604474356
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -90,28 +89,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 1595129379242006}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 86c66744e293a6444bb62484e257820c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 4
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 114732434088416082}
-          m_MethodName: Interact
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  delegates: []
+  _onClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114732434088416082}
+        m_MethodName: Interact
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!212 &212418657537931812
 SpriteRenderer:
   m_ObjectHideFlags: 1
